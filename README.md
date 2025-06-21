@@ -60,3 +60,11 @@ They Google everything, get overwhelmed, and sometimes misinterpret crucial info
 | Tool calling     | For reminders, calendar, note generation            |
 
 ---
+
+## Tasks
+
+- [ ] Find out existing MCP servers for different tasks.
+- [ ] Build an MCP client that can handle tool calling and LLM interactions (streamlit)
+- [ ] Find out a database for drug information.
+- [ ] Implement PDF parsing and or OCR for document uploads.
+- [ ] Embedding and RAG setup for medical glossary and drug info, and report parsing.
