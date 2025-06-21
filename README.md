@@ -71,7 +71,7 @@ They Google everything, get overwhelmed, and sometimes misinterpret crucial info
 
 ### MCP Server Lists
 
-- Chroma DB MCP Server for RAG.
+- Chroma DB MCP Server for RAG. (https://github.com/chroma-core/chroma-mcp)
 - Embedding MCP Server for medical glossary and drug info.
 - OCR, PDF parsing MCP Server for document uploads.
 - Calendar and reminder MCP Server for scheduling and reminders.
