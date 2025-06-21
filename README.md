@@ -68,3 +68,11 @@ They Google everything, get overwhelmed, and sometimes misinterpret crucial info
 - [ ] Find out a database for drug information.
 - [ ] Implement PDF parsing and or OCR for document uploads.
 - [ ] Embedding and RAG setup for medical glossary and drug info, and report parsing.
+
+### MCP Server Lists
+
+- Chroma DB MCP Server for RAG.
+- Embedding MCP Server for medical glossary and drug info.
+- OCR, PDF parsing MCP Server for document uploads.
+- Calendar and reminder MCP Server for scheduling and reminders.
+- Note generation MCP Server for generating summaries and follow-up questions.
