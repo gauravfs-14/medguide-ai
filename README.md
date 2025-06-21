@@ -4,9 +4,9 @@
 
 **MedGuide AI** helps everyday people understand:
 
-* Lab test results (e.g., blood work, thyroid reports)
-* Prescription medications (what they are, how to take them, side effects)
-* Medical jargon in doctor's notes or visit summaries
+- Lab test results (e.g., blood work, thyroid reports)
+- Prescription medications (what they are, how to take them, side effects)
+- Medical jargon in doctor's notes or visit summaries
 
 And it does all this **locally**, ensuring **privacy** and **offline accessibility**.
 
@@ -16,9 +16,9 @@ And it does all this **locally**, ensuring **privacy** and **offline accessibili
 
 Most people:
 
-* Get confused by lab results like: “TSH = 4.9 mIU/L”
-* Don’t know how to interpret medications like “Losartan 50mg BID”
-* Avoid reading clinical documents because they’re filled with jargon
+- Get confused by lab results like: “TSH = 4.9 mIU/L”
+- Don’t know how to interpret medications like “Losartan 50mg BID”
+- Avoid reading clinical documents because they’re filled with jargon
 
 They Google everything, get overwhelmed, and sometimes misinterpret crucial information.
 
@@ -42,9 +42,9 @@ They Google everything, get overwhelmed, and sometimes misinterpret crucial info
 
 5. Optionally, the agent can:
 
-   * Set a **reminder to take meds**
-   * Generate a **summary for a family member**
-   * Offer a **list of follow-up questions** to ask the doctor
+   - Set a **reminder to take meds**
+   - Generate a **summary for a family member**
+   - Offer a **list of follow-up questions** to ask the doctor
 
 ---
 
@@ -72,7 +72,7 @@ They Google everything, get overwhelmed, and sometimes misinterpret crucial info
 ### MCP Server Lists
 
 - Chroma DB MCP Server for RAG. (https://github.com/chroma-core/chroma-mcp)
-- Embedding MCP Server for medical glossary and drug info. 
-- OCR, PDF parsing MCP Server for document uploads. 
-- Calendar and reminder MCP Server for scheduling and reminders. 
-- Note generation MCP Server for generating summaries and follow-up questions. 
+- Embedding MCP Server for medical glossary and drug info.
+- OCR, PDF parsing MCP Server for document uploads.
+- Calendar and reminder MCP Server for scheduling and reminders. (https://github.com/gauravfs-14/medguide-ai.git)
+- Note generation MCP Server for generating summaries and follow-up questions.
