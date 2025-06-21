@@ -1,17 +1,22 @@
 import asyncio
+import getpass
 import os
-from socket import timeout
 from dotenv import load_dotenv
 from langchain.chat_models import init_chat_model
 from mcp_use import MCPAgent, MCPClient
 
+load_dotenv(override=True)
+
 async def main():
     # Load environment variables
-    load_dotenv()
+    if not os.environ.get("GOOGLE_API_KEY"):
+        os.environ["GOOGLE_API_KEY"] = getpass.getpass("Enter API key for Google Gemini: ")
+
+    MCP_FILE_PATH= os.environ.get("MCP_FILE_PATH", "mcp_config.json")
 
     # Create MCPClient from config file
     client = MCPClient.from_config_file(
-        os.path.join(os.path.dirname(__file__), "browser_mcp.json")
+       MCP_FILE_PATH
     )
 
     # Create LLM
@@ -37,10 +42,6 @@ async def main():
 
         except Exception as e:
             print(f"An error occurred: {e}")
-            if isinstance(e, timeout):
-                print("Request timed out. Retrying...")
-            else:
-                break
 
 if __name__ == "__main__":
     asyncio.run(main())

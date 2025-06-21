@@ -1,13 +1,12 @@
 {
     "mcpServers": {
-        "playwright": {
+        "filesystem": {
             "command": "npx",
             "args": [
-                "@playwright/mcp@latest"
-            ],
-            "env": {
-                "DISPLAY": ":1"
-            }
+                "-y",
+                "@modelcontextprotocol/server-filesystem",
+                "/path/to/allowed.path"
+            ]
         }
     }
 }
