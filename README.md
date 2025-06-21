@@ -74,5 +74,5 @@ They Google everything, get overwhelmed, and sometimes misinterpret crucial info
 - Chroma DB MCP Server for RAG. (https://github.com/chroma-core/chroma-mcp)
 - Embedding MCP Server for medical glossary and drug info.
 - OCR, PDF parsing MCP Server for document uploads.
-- Calendar and reminder MCP Server for scheduling and reminders. (https://github.com/gauravfs-14/medguide-ai.git)
+- Calendar and reminder MCP Server for scheduling and reminders. (https://github.com/nspady/google-calendar-mcp.git)
 - Note generation MCP Server for generating summaries and follow-up questions.
