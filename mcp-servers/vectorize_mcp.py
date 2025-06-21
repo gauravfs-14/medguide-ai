@@ -1,30 +1,76 @@
 from mcp.server.fastmcp import FastMCP
+import chromadb
+from chromadb.config import Settings
+import httpx
+import os
+from typing import Dict, List, Optional
 
-app = FastMCP("vectorize_mcp")
+app = FastMCP("vector_store_mcp")
+
+# Initialize ChromaDB
+CHROMA_PATH = "data/vectorstore.db"
+os.makedirs(os.path.dirname(CHROMA_PATH), exist_ok=True)
+
+client = chromadb.PersistentClient(
+    path=CHROMA_PATH,
+    settings=Settings(
+        allow_reset=True,
+        is_persistent=True
+    )
+)
+
+# Create collection
+collection = client.get_or_create_collection(
+    name="text_vectors",
+    metadata={"hnsw:space": "cosine"}
+)
+
+def get_embedding(text: str) -> List[float]:
+    """Get embeddings from Ollama API"""
+    response = httpx.post(
+        "http://localhost:11434/api/embeddings",
+        json={
+            "model": "nomic-embed-text:v1.5",
+            "prompt": text
+        }
+    )
+    return response.json()["embeddings"]
 
 @app.tool()
-def vectorize_mcp(
+def store_vector(
     text: str,
-    model: str = "sentence-transformers/all-MiniLM-L6-v2",
-    batch_size: int = 32,
-) -> list:
+    metadata: Optional[Dict] = None
+) -> Dict:
     """
-    Vectorize text using a specified model.
+    Vectorize text and store in ChromaDB.
 
     Args:
-        text (str): The input text to vectorize.
-        model (str): The model to use for vectorization.
-        batch_size (int): The batch size for processing.
+        text: Text to vectorize and store
+        metadata: Optional metadata to store with the vector
 
     Returns:
-        list: A list of vectors representing the input text.
+        Dict with database URL and schema info
     """
-    return _vectorize(text, model=model, batch_size=batch_size)
+    # Generate embedding
+    embedding = get_embedding(text)
+    
+    # Store in ChromaDB
+    collection.add(
+        embeddings=[embedding],
+        documents=[text],
+        metadatas=[metadata or {}],
+        ids=[str(hash(text))]
+    )
 
-
-def _vectorize(text: str, model: str, batch_size: int) -> list:
-    """Internal function to vectorize text."""
-    return []
+    return {
+        "database_url": f"file://{os.path.abspath(CHROMA_PATH)}",
+        "schema": {
+            "collection": "text_vectors",
+            "vector_dimension": len(embedding),
+            "metadata_schema": "dynamic",
+            "distance_metric": "cosine"
+        }
+    }
 
 if __name__ == "__main__":
     app.run()
