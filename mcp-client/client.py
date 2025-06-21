@@ -16,7 +16,7 @@ async def main():
 
     # Create MCPClient from config file
     client = MCPClient.from_config_file(
-       MCP_FILE_PATH
+        os.path.abspath(MCP_FILE_PATH)
     )
 
     # Create LLM
