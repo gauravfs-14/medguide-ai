@@ -5,8 +5,43 @@
             "args": [
                 "-y",
                 "@modelcontextprotocol/server-filesystem",
-                "/path/to/allowed.path"
-            ]
+                "/Users/gchhetri/Developer/PERSONAL/medguide-ai"
+            ],
+            "transport": "stdio"
+        },
+        "chroma": {
+            "command": "uvx",
+            "args": [
+                "chroma-mcp",
+                "--client-type",
+                "persistent",
+                "--data-dir",
+                "/Users/gchhetri/Developer/PERSONAL/medguide-ai/data",
+                "--database",
+                "medguide-db"
+            ],
+            "transport": "stdio"
+        },
+        "memory": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-memory"
+            ],
+            "transport": "stdio",
+            "env": {
+                "MEMORY_FILE_PATH": "/Users/gchhetri/Developer/PERSONAL/medguide-ai/mcp-client"
+            }
+        },
+        "vectorize_mcp": {
+            "command": "uv",
+            "args": [
+                "--directory",
+                "/Users/gchhetri/Developer/PERSONAL/medguide-ai/mcp-servers",
+                "run",
+                "vectorize_mcp.py"
+            ],
+            "transport": "stdio"
         }
     }
 }
