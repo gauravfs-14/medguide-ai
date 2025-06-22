@@ -64,6 +64,10 @@ async def init_graph():
                     "transport": server_config.get("transport", "stdio")  # Always include transport
                 }
                 
+                # Include environment variables if present
+                if "env" in server_config:
+                    connection_config["env"] = server_config["env"]
+                
                 connections[server_name] = connection_config
         else:
             # Direct format without wrapper

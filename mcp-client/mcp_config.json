@@ -17,7 +17,7 @@
             ],
             "transport": "stdio",
             "env": {
-                "MEMORY_FILE_PATH": "/Users/gchhetri/Developer/PERSONAL/medguide-ai/mcp-client"
+                "MEMORY_FILE_PATH": "/Users/gchhetri/Developer/PERSONAL/medguide-ai/mcp-client/memory.json"
             }
         },
         "vectorize_mcp": {
