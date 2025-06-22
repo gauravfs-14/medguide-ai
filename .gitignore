@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 medguide_ai**
 
+.pytest_cache/
