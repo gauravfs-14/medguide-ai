@@ -9,19 +9,6 @@
             ],
             "transport": "stdio"
         },
-        "chroma": {
-            "command": "uvx",
-            "args": [
-                "chroma-mcp",
-                "--client-type",
-                "persistent",
-                "--data-dir",
-                "/Users/gchhetri/Developer/PERSONAL/medguide-ai/data",
-                "--database",
-                "medguide-db"
-            ],
-            "transport": "stdio"
-        },
         "memory": {
             "command": "npx",
             "args": [

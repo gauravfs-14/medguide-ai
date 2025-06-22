@@ -438,8 +438,8 @@ async def handle_user_input(user_input: str):
 def main():
     # Page configuration
     st.set_page_config(
-        page_title="🧠 MedGuide AI - Medical Assistant",
-        page_icon="�",
+        page_title="MedGuide AI - Medical Assistant",
+        page_icon="🧠",
         layout="centered",
         initial_sidebar_state="expanded"
     )
@@ -448,7 +448,7 @@ def main():
     init_session_state()
     
     # Header
-    st.title("� MedGuide AI - Your Personal Medical Assistant")
+    st.title("🧠 MedGuide AI - Your Personal Medical Assistant")
     st.markdown("*AI-powered assistant for understanding health reports, medications, and medical documents*")
     
     # Initialize graph if needed
