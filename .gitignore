@@ -3,3 +3,25 @@
 data/
 
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.db
+*.sqlite3
+*.log
+*.csv
+*.tsv
+*.json
+*.xml
+*.yaml
+*.yml
+*.pickle
+*.pkl.gz
+*.zip
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.lzma
+
+.venv/
