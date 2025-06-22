@@ -1,14 +1,5 @@
 {
     "mcpServers": {
-        "filesystem": {
-            "command": "npx",
-            "args": [
-                "-y",
-                "@modelcontextprotocol/server-filesystem",
-                "/Users/gchhetri/Developer/PERSONAL/medguide-ai"
-            ],
-            "transport": "stdio"
-        },
         "memory": {
             "command": "npx",
             "args": [
@@ -17,14 +8,14 @@
             ],
             "transport": "stdio",
             "env": {
-                "MEMORY_FILE_PATH": "/Users/gchhetri/Developer/PERSONAL/medguide-ai/mcp-client/memory.json"
+                "MEMORY_FILE_PATH": "memory.json"
             }
         },
         "vectorize_mcp": {
             "command": "uv",
             "args": [
                 "--directory",
-                "/Users/gchhetri/Developer/PERSONAL/medguide-ai/mcp-servers",
+                "./mcp-servers",
                 "run",
                 "vectorize_mcp.py"
             ],

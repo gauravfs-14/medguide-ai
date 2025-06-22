@@ -42,7 +42,6 @@ def query_user_collection(query: str, collection_name: str, top_k: int = 5) -> l
     return [doc.page_content for doc in docs]
 
 
-
 @mcp.tool()
 def vectorize_pdf(pdf_path: str, collection_name: str) -> str:
     """

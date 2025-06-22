@@ -72,7 +72,6 @@ As soon as the user uploads a PDF:
 - `vectorize_pdf(collection_name, pdf_path)` → vectorize and persist document
 - `query_user_collection(query, collection_name)` → summarize or retrieve findings
 - `open_nodes`, `add_observations` → manage user memory
-- `list_directory`, `write_file` → for general file system navigation only
 
 🗂️ Automatically generate `collection_name` from uploaded file:
 - Strip extension, replace spaces/special characters with `_`
